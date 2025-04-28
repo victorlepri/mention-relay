@@ -12,6 +12,7 @@ export default Manifest({
   botScopes: [
     "commands",
     "chat:write",
+    "chat:write.public", // Added this required scope
     "datastore:read",
     "datastore:write",
     "channels:history",

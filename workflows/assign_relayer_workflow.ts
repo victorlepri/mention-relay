@@ -59,11 +59,10 @@ const assignStep = AssignRelayerWorkflow.addStep(
   },
 );
 
-// Finally, send a confirmation message
+// Instead of SendMessage, send a DM to the user who triggered the workflow
 AssignRelayerWorkflow.addStep(
-  Schema.slack.functions.SendEphemeralMessage,
+  Schema.slack.functions.SendDm,
   {
-    channel_id: AssignRelayerWorkflow.inputs.interactivity.channel_id,
     user_id: AssignRelayerWorkflow.inputs.interactivity.interactor.id,
     message: assignStep.outputs.message,
   },
